@@ -1,0 +1,22 @@
+# Root Level .gitignore
+# Note: Patterns at the root apply recursively to ALL subfolders
+
+# --- Rust Build Artifacts (Excluded from all chapters) ---
+target/
+*.lock
+Cargo.lock
+Cargo.toml#
+
+# --- Ignore Nested .git Folders (Created by cargo new) ---
+# This matches .git inside any subfolder (chapter_1, chapter_2, etc.)
+**/.git/
+
+# --- Editor & IDE Files ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+
+# --- Documentation (If you run `cargo doc` locally) ---
+doc/

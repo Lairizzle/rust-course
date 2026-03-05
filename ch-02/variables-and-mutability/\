@@ -1,0 +1,46 @@
+//Constant example here:
+const TAX_RATE: f64 = 11.5;
+
+fn main() {
+    //=========== Basic variable intro and use
+    let apples: i32 = 50;
+    let oranges: i32 = 14 + 6;
+    let fruits: i32 = apples + oranges;
+
+    println!(
+        "I have a total of {0} apples and {1} oranges. This is a total of {2} fruits. Having {0} apples is pretty awesome.",
+        apples, oranges, fruits
+    );
+
+    //=========== Immutable and Mutable Variables
+    let gym_reps: i32 = 10;
+    println!("I plan to do {gym_reps} reps");
+
+    // By default variables are immutable. You cannot reassign it unless it is mutable.
+    //gym_reps = 15;
+
+    //You must include the mut keyboard to allow it to be changed.
+    let mut gym_reps2: i32 = 10;
+    gym_reps2 = 12;
+
+    println!("I know plan to do to {gym_reps2} reps.");
+
+    //============ Variable Shadowing
+    //Instead of changing the assignment, we can redeclare a variable.
+    //Variables are valid until they are redelcared.
+    //If you use mut keyword, you can only reassign it with the same type.
+    let grams_of_protein: &str = "100.34";
+    println!("You will require {grams_of_protein} grams of protein.");
+
+    //You can declare it again using let.
+    let grams_of_protein: f64 = 100.34;
+    println!("You will require {grams_of_protein} grams of protein.");
+
+    //============ Constants
+    //A constant is a name that we assign to a value but it can never change.
+    //Variables are limited to scope but constants are available at a file level.
+    //Constant must be known at compile time.
+    let income: i32 = 10000;
+    let incomeTax: i32 = income * (TAX_RATE / 100);
+    println!("The tax rate is {TAX_RATE}");
+}
