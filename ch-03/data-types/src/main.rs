@@ -1,4 +1,5 @@
-use std::array;
+use std::ops::Range;
+use std::ops::RangeInclusive;
 
 #[allow(unused_variables)]
 fn main() {
@@ -38,4 +39,27 @@ fn main() {
     println!("{:?}", array_numbers);
     //You can also use the debug macro
     dbg!(2 + 2);
+
+    //Tuples
+    //They can contain multiple elements, each assigned and index value
+    //Unlike an array, they can support multiple types as it values. Arrays are homogeneous
+    let employee: (&str, i32, &str) = ("Molly", 32, "Marketing");
+    //let name: &str = employee.0;
+    let (name, age, department) = employee;
+    println!("{employee:#?}");
+
+    //A Range is a sequence or interval of consectutive values
+    let month_days: Range<i32> = 1..31;
+
+    //If we add the equal sign it includes UP TO the value
+    let month_days: RangeInclusive<i32> = 1..=31;
+    println!("{month_days:?}");
+
+    for x in month_days {
+        println!("{x}");
+    }
+
+    //Generics:
+    //A generic is a type argument
+    //It is a category of data
 }

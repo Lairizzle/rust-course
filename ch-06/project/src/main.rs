@@ -19,6 +19,8 @@ fn main() {
 
     lunch = eat_meal(lunch);
     println!("The left over is empty: {lunch}");
+
+    my_function();
 }
 
 fn eat_meal(mut meal: String) -> String {
@@ -26,4 +28,8 @@ fn eat_meal(mut meal: String) -> String {
     println!("Before we clear: {meal}");
     meal.clear();
     meal
+}
+
+fn my_function() {
+    println!("hello");
 }
